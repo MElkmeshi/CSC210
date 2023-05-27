@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+
 int arr1[5];
 void *AVG(int avg)
 {
@@ -22,7 +23,6 @@ void *MAX(int max)
     for (int i = 1; i < 5; i++)
         max = max > arr1[i] ? max : arr1[i];
 }
-
 int main()
 {
     int avg;
@@ -32,7 +32,6 @@ int main()
     {
         scanf("%d", &arr1[i]);
     }
-
     pthread_t tid1;
     pthread_create(&tid1, NULL, AVG, &avg);
     pthread_join(tid1, NULL);
@@ -45,7 +44,6 @@ int main()
     pthread_create(&tid3, NULL, MIN, &min);
     pthread_join(tid3, NULL);
     printf("min = %d\n", min);
-
     pthread_exit(NULL);
     return 0;
 }

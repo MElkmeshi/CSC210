@@ -10,7 +10,7 @@ int main(){
         printf("Fork Failed");
     else if(pid == 0){
         execlp("ls","ls","-l",NULL);
-        printf("LINE J");
+        printf("asssssssssssasasa\n");
     }
     else{
         wait(NULL);
